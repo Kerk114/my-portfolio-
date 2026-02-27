@@ -1,130 +1,169 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Galaxy</title>
-    <style>
-        body {
-            background-color: #0b0b0b;
-            color: #FFFFFF;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Galaxy</title>
 
-        .lightsaber-text {
-            color: #A0BA25;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 0 0 8px #5D6910, 0 0 15px #5D6910;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
 
-        header {
-            text-align: center;
-            padding: 120px 20px;
-            border-bottom: 3px solid #CAF500;
-            box-shadow: 0 4px 15px rgba(191, 230, 41, 0.4);
-            background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
-        }
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #ffe81f;
+    overflow-x: hidden;
 
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-        }
+    /* 🌑 ดำไล่เฉดแบบในภาพ */
+    background:
+        radial-gradient(circle at 75% 50%, rgba(60,60,60,0.25), transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(40,40,40,0.2), transparent 50%),
+        linear-gradient(to bottom, #000000 0%, #050505 40%, #0a0a0a 70%, #000000 100%);
+}
 
-        header p {
-            font-size: 1.2em;
-            color: #888;
-            font-style: italic;
-        }
+/* ⭐ ดาว */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background:
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(2px 2px at 30% 70%, #ddd, transparent),
+        radial-gradient(1px 1px at 50% 40%, white, transparent),
+        radial-gradient(2px 2px at 70% 10%, #ccc, transparent),
+        radial-gradient(1px 1px at 90% 60%, white, transparent),
+        radial-gradient(2px 2px at 20% 90%, #eee, transparent),
+        radial-gradient(1px 1px at 80% 80%, white, transparent),
+        radial-gradient(2px 2px at 40% 15%, #ddd, transparent);
+    background-repeat: repeat;
+    background-size: 900px 900px;
+    animation: moveStars 220s linear infinite;
+    z-index: -1;
+    opacity: 0.8;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1500px); }
+}
 
-        section {
-            margin-bottom: 60px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed #ECF70A;
-        }
+/* 🌟 หัวข้อ */
+.lightsaber-text {
+    color: #ffe81f;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow:
+        0 0 5px #ffe81f,
+        0 0 20px #ffcc00,
+        0 0 50px #ffcc00;
+}
 
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding: 0;
-            list-style: none;
-        }
+/* 🎬 HEADER */
+header {
+    text-align: center;
+    padding: 150px 20px;
+    border-bottom: 2px solid #ffe81f;
+    box-shadow: 0 0 60px rgba(255, 232, 31, 0.5);
+}
 
-        .skills-grid li {
-            background-color: #111;
-            border: 1px solid #BFE629;
-            padding: 10px 20px;
-            border-radius: 4px;
-            box-shadow: 0 0 5px rgba(191, 230, 41, 0.3);
-            transition: all 0.3s ease;
-        }
+header h1 {
+    font-size: 3.5em;
+    transform: perspective(600px) rotateX(10deg);
+}
 
-        .skills-grid li:hover {
-            box-shadow: 0 0 15px rgba(191, 230, 41, 0.8);
-            transform: scale(1.05);
-            cursor: pointer;
-        }
+header p {
+    color: #aaa;
+    font-style: italic;
+}
 
-        a {
-            color: #D2FA20;
-            text-decoration: none;
-            transition: text-shadow 0.3s;
-        }
+/* 🌌 Section */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+}
 
-        a:hover {
-            text-shadow: 0 0 8px #E6FF2A;
-        }
+section {
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed rgba(255,232,31,0.5);
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #555;
-            font-size: 0.9em;
-        }
-    </style>
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.skills-grid li {
+    background: rgba(10,10,10,0.9);
+    border: 1px solid #ffe81f;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(255,232,31,0.4);
+    transition: 0.3s;
+}
+
+.skills-grid li:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px rgba(255,232,31,1);
+    cursor: pointer;
+}
+
+a {
+    color: #ffe81f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-shadow: 0 0 15px #ffffff;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <h1 class="lightsaber-text">นาย วัชรพล เริ่มศรี</h1>
-        <p>"My Portfolio"</p>
-    </header>
+<header>
+    <h1 class="lightsaber-text">นาย วัชรพล เริ่มศรี</h1>
+    <p>"My Portfolio"</p>
+</header>
 
-    <div class="container">
-        <section id="about">
-            <h2 class="lightsaber-text">ประวัติย่อ</h2>
-            <p>สวัสดีครับผมชื่อนาย วัชรพล เริ่มศรี ชื่อเล่นชื่อ เคิร์ก เป็นนักศึกษามหาลัยราชภัฏพระนคร ปีที่ 1 สาขา</p>
-        </section>
+<div class="container">
+    <section id="about">
+        <h2 class="lightsaber-text">ประวัติย่อ</h2>
+        <p>สวัสดีครับผมชื่อนาย วัชรพล เริ่มศรี ชื่อเล่นชื่อ เคิร์ก เป็นนักศึกษามหาลัยราชภัฏพระนคร ปีที่ 1 สาขา</p>
+    </section>
 
-        <section id="skills">
-            <h2 class="lightsaber-text">Skills</h2>
-            <ul class="skills-grid">
-                <li>ปั้น 3D โมเดล พื้นฐาน</li>
-                <li>สร้างเกมพื้นฐาน (RPG Maker)</li>
-                <li>เล่นดรตรี</li>
-                <li>ถ่ายภาพ</li>
-            </ul>
-        </section>
+    <section id="skills">
+        <h2 class="lightsaber-text">Skills</h2>
+        <ul class="skills-grid">
+            <li>ปั้น 3D โมเดล พื้นฐาน</li>
+            <li>สร้างเกมพื้นฐาน (RPG Maker)</li>
+            <li>เล่นดนตรี</li>
+            <li>ถ่ายภาพ</li>
+        </ul>
+    </section>
 
-        <section id="contact">
-            <h2 class="lightsaber-text">ข้อมูลติดต่อ</h2>
-            <p>Email: <a href="mailto:darth.k@example.com">Notreal@gmail.com</a></p>
-        </section>
-    </div>
+    <section id="contact">
+        <h2 class="lightsaber-text">ข้อมูลติดต่อ</h2>
+        <p>Email: <a href="mailto:darth.k@example.com">Notreal@gmail.com</a></p>
+    </section>
+</div>
 
-    <footer>
-        <p>© 2026</p>
-    </footer>
+<footer>
+    <p>© 2026</p>
+</footer>
 
 </body>
 </html>
