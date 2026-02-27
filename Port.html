@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Galaxy</title>
+    <style>
+        body {
+            background-color: #0b0b0b;
+            color: #FFFFFF;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .lightsaber-text {
+            color: #A0BA25;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 8px #5D6910, 0 0 15px #5D6910;
+        }
+
+        header {
+            text-align: center;
+            padding: 120px 20px;
+            border-bottom: 3px solid #CAF500;
+            box-shadow: 0 4px 15px rgba(191, 230, 41, 0.4);
+            background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #888;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ECF70A;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skills-grid li {
+            background-color: #111;
+            border: 1px solid #BFE629;
+            padding: 10px 20px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(191, 230, 41, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skills-grid li:hover {
+            box-shadow: 0 0 15px rgba(191, 230, 41, 0.8);
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        a {
+            color: #D2FA20;
+            text-decoration: none;
+            transition: text-shadow 0.3s;
+        }
+
+        a:hover {
+            text-shadow: 0 0 8px #E6FF2A;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #555;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="lightsaber-text">นาย วัชรพล เริ่มศรี</h1>
+        <p>"My Portfolio"</p>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2 class="lightsaber-text">ประวัติย่อ</h2>
+            <p>สวัสดีครับผมชื่อนาย วัชรพล เริ่มศรี ชื่อเล่นชื่อ เคิร์ก เป็นนักศึกษามหาลัยราชภัฏพระนคร ปีที่ 1 สาขา</p>
+        </section>
+
+        <section id="skills">
+            <h2 class="lightsaber-text">Skills</h2>
+            <ul class="skills-grid">
+                <li>ปั้น 3D โมเดล พื้นฐาน</li>
+                <li>สร้างเกมพื้นฐาน (RPG Maker)</li>
+                <li>เล่นดรตรี</li>
+                <li>ถ่ายภาพ</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2 class="lightsaber-text">ข้อมูลติดต่อ</h2>
+            <p>Email: <a href="mailto:darth.k@example.com">Notreal@gmail.com</a></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026</p>
+    </footer>
+
+</body>
+</html>
